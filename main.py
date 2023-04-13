@@ -12,22 +12,28 @@ s = int(input())
 ar_x = list()
 ar_y = list()
 
-D = (s * s) - (4 * p) # Вычисление дискриминанта.
+if p == 0:
+    print("Первое загаданное число:", 0)
+    print("Второе загаданное число:", s)
 
-if D == 0:
-    y = s / 2
-    x = p / y
-    print("Первое загаданное число:", x)
-    print("Второе загаданное число:", y)
 else:
-    y1 = int((s + D ** 0.5) / 2)
-    y2 = int((s - D ** 0.5) / 2)
-    ar_y.append(y1)
-    ar_y.append(y2)
-    x1 = int(p / y1)
-    x2 = int(p / y2)
-    ar_x.append(x1)
-    ar_x.append(x2)
+    D = (s * s) - (4 * p) # Вычисление дискриминанта.
 
-print("Первое загаданное число:", ar_x[1])
-print("Второе загаданное число:", ar_y[1])
+    if D == 0:
+        y = s / 2
+        x = p / y
+        print("Первое загаданное число:", x)
+        print("Второе загаданное число:", y)
+    else:
+        y1 = int((s + D ** 0.5) / 2)
+        y2 = int((s - D ** 0.5) / 2)
+
+        ar_y.append(y1)
+        ar_y.append(y2)
+        x1 = int(p / y1)
+        x2 = int(p / y2)
+        ar_x.append(x1)
+        ar_x.append(x2)
+
+    print("Первое загаданное число:", ar_x[1])
+    print("Второе загаданное число:", ar_y[1])
